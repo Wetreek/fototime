@@ -116,7 +116,7 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
             <li class="nav-item">{{ __('menu.about_us') }}</li>
             <li class="nav-item">{{ __('menu.events') }}</li>
             <li class="nav-item">{{ __('menu.contact') }}</li>
-            <li class="nav-item test " id="mobileFaq">
+            <li class="nav-item" id="mobileFaq">
                     <a href="{{ url('/about') }}" class="nav-link">FAQ</a>
                 </li>
             <li class="nav-item">
