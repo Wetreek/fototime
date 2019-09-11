@@ -106,7 +106,6 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
                 </ul>
                 </div>
                 @endforeach
-                <?php ?>
             </li>
              @if (auth()->user() && auth()->user()->isAdmin())
             <li class="nav-item"> {{ __('menu.fees') }}</li>
