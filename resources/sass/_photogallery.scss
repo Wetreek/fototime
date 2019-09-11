@@ -1,0 +1,20 @@
+.gallery {
+  margin: 0 auto;
+}
+.gallery-item {
+  max-width: 350px;
+  max-height: 350px;
+  //@media (max-width: 768px) {
+   // max-width: 400px;
+   // max-height: 400px;
+  //}
+  margin: 10px 10px;
+  overflow: hidden;
+
+  img{
+    display: block;
+    margin:0 -38.885%;
+    width: 177.777%;
+  }
+   
+}
