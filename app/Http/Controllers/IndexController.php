@@ -34,6 +34,7 @@ class IndexController extends Controller
         $competition = Competition::where('id', $id)->first();
         //$competition = TextTranslate::where('lang_id', $langID)->where('competition_id', $id)->first();
         $lang = $this->getLangId();
+        dd($competition->text_translates->where('lang_id', $lang)->first()->name);
         return view('competitions.competition', compact(['competition', 'lang']));
     }
 

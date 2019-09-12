@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <?php dd($competition) ?>
-        <h1>{{ $competition->name }}</h1>
+
+@include( 'competitions.competition-navbar')
+
+<div class="container mt-2">
+        <h1>{{ app()->getLocale() }}</h1>
+        <h1>{{ $competition->text_translates->where('lang_id', $lang)->first()->name }}</h1>
     </div>
-    @include('competitions.competitionNavbar')
 @endsection
