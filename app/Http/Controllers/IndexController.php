@@ -29,13 +29,9 @@ class IndexController extends Controller
 
     public function show($id)
     {
-        //$landID = null;
-        //app()->getLocale() == "sk" ? $langID = 1 : $langID = 2;
         $competition = Competition::where('id', $id)->first();
-        //$competition = TextTranslate::where('lang_id', $langID)->where('competition_id', $id)->first();
-        $lang = $this->getLangId();
-        dd($competition->text_translates->where('lang_id', $lang)->first()->name);
-        return view('competitions.competition', compact(['competition', 'lang']));
+     
+        return view('competitions.competition', compact('competition'));
     }
 
     public function users()
