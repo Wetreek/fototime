@@ -36,13 +36,13 @@
             </thead>
             <tbody>
                 @foreach ($competitions as $comp)
-                  @if (isset($comp->competition_id))
+                  @if (isset($comp->id))
                     <tr>
-                        <td>{{ $comp->competition_id }}</td>
-                        <td>{{ $comp->name }}</td>
-                        <td>{{ $comp->competition->valid_from->toDateTimeLocalString()}}</td>
-                        <td>{{ $comp->competition->valid_to }}</td>
-                        <td>{{ $comp->competition->status}}</td>
+                        <td>{{ $comp->id }}</td>
+                        <td>{{ $comp->text_translates->where('lang_id', $lang)->first()->name }}</td>
+                        <td>{{ $comp->valid_from->toFormattedDateString() }}</td>
+                        <td>{{ $comp->valid_to->toFormattedDateString() }}</td>
+                        <td>{{ $comp->status}}</td>
                     </tr>
                   @endif
                 @endforeach
