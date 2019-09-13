@@ -10754,10 +10754,15 @@ h1 {
   outline: 0;
 }
 .hamburger .hamburger-inner {
+  width: 30px;
+  height: 2px;
+  background-color: #fff !important;
   background-color: #fff;
 }
-.hamburger .hamburger-inner::before, .hamburger .hamburger-inner::after {
-  background-color: #fff;
+.hamburger .hamburger-inner::before, .hamburger .hamburger-inner::after, .hamburger .hamburger-inner .is-active {
+  background-color: #fff !important;
+  width: 30px;
+  height: 2px;
 }
 
 .flag {

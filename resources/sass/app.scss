@@ -193,9 +193,15 @@ h1 {
     margin-top: 0.25rem;
 
     .hamburger-inner {
+        width: 30px;
+        height: 2px;
+        background-color: #fff !important;
+
         background-color: #fff;
-        &::before, &::after {
-            background-color: #fff;
+        &::before, &::after, .is-active {
+            background-color: #fff !important;
+            width: 30px;
+            height: 2px;
         }
     }
 }
