@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use App\Models\Competition;
-use App\Models\TextTranslate;
+use App\Models\Photo;
 
 class IndexController extends Controller
 {
@@ -14,9 +14,10 @@ class IndexController extends Controller
     {
         $users = User::all();
         $competitions = Competition::all();
+        $photos = Photo::paginate(3);
 
         $lang = $this->getLangId();
-        return view('welcome', compact(['competitions', 'lang']));
+        return view('welcome', compact(['competitions', 'lang', 'photos']));
     }
     public function gallery()
     {
