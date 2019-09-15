@@ -41,7 +41,7 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
         @auth
             <li class="nav-item">
                 <a id="top-navbar-toggle" class="nav-link" href="#" role="button" >
-                    {{ Auth::user()->fname }} <span class="caret"></span>
+                    {{ !empty(Auth::user()->fname) ? Auth::user()->fname : Auth::user()->username  }}  
                 </a>
             </li>
         @endauth
@@ -56,13 +56,13 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
                 <li class="collapsible-header" id="guestProfile"><a data-toggle="collapse" href="#profil" id="profileToggle"> {{ __('menu.profile') }}</a>
                     <div class="collapsible-body">
                         <ul class="collapse list-unstyled" id="profil">
-                            <li class="s-item"><a href="{{ route('login') }}">
-                                {{ __('messages.login') }}
-                            </a></li>
+                            <li class="s-item">
+                                <a href="{{ route('login') }}"> {{ __('messages.login') }} </a>
+                            </li>
                         @if (Route::has('register'))
-                            <li class="s-item"><a href="{{ route('register') }}">
-                                {{ __('messages.register') }}
-                            </a></li>
+                            <li class="s-item">
+                                <a href="{{ route('register') }}"> {{ __('messages.register') }} </a>
+                            </li>
                         @endif
                         </ul>
                     </div>   
@@ -75,15 +75,16 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
         
                         <div class="collapsible-body">
                             <ul class="collapse list-unstyled" id="user">
-                             <li class="s-item"><a  href={{ route('profile') }}>
-                                {{ __('messages.edit') }}
-                            </a></li>
+                             <li class="s-item">
+                                 {{-- <a  href={{ route('profile') }}>{{ __('messages.edit') }}</a> --}}
+                            </li>
                             
-                            <li class="s-item"><a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                {{ __('messages.logout') }}
-                            </a>
+                            <li class="s-item">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                          onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                                        {{ __('messages.logout') }}
+                                </a>
         
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
@@ -92,9 +93,13 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
                         </div>
                     </li>
                 @endauth
-            <li class="nav-item"><a class="nav-link" href={{ route('gallery')}}>{{ __('menu.photo_gallery') }}</a></li>
+            <li class="nav-item">
+                {{-- <a class="nav-link" href={{ route('gallery')}}>{{ __('menu.photo_gallery') }}</a> --}}
+            </li>
             @if (auth()->user())
-                    <li class="nav-item"><a class="nav-link" href={{ route('mygallery')}}> {{ __('menu.my_photos') }}</a></li>
+                    <li class="nav-item">
+                        {{-- <a class="nav-link" href={{ route('mygallery')}}> {{ __('menu.my_photos') }}</a> --}}
+                    </li>
             @endif
             <li class="collapsible-header waves-effect arrow-r"><a href="#homeSubmenu" data-toggle="collapse" id="competitionToggle"> {{ __('menu.competitions') }}</a>
             <?php 
@@ -133,9 +138,9 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
     </div>
     <div class="top-navbar">
         <ul class="navbar-nav text-center">
-            <li class="nav-item"><a href={{ route('profile') }}>
-                {{ __('messages.edit') }}
-            </a></li>
+            <li class="nav-item">
+                {{-- <a href={{ route('profile') }}> {{ __('messages.edit') }} </a> --}}
+            </li>
             
             <li class="nav-item"><a href="{{ route('logout') }}"
             onclick="event.preventDefault();

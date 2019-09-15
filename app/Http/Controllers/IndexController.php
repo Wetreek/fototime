@@ -17,29 +17,17 @@ class IndexController extends Controller
         $photos = Photo::paginate(3);
 
         $lang = $this->getLangId();
-        return view('welcome', compact(['competitions', 'lang', 'photos']));
-    }
-    public function gallery()
-    {
-        return view('photoGallery');
-    }
-    public function mygallery()
-    {
-        return view('myPhotoGallery');
+        return view('index', compact(['competitions', 'lang', 'photos']));
     }
 
-    public function show($id)
-    {
-        $competition = Competition::where('id', $id)->first();
-     
-        return view('competitions.competition', compact('competition'));
-    }
-
+    // return users as json
     public function users()
     {
-        $users = User::all();
-        return view('admin.users', compact(['users']));
+        $users = User::paginate(10);
+
+        return response()->json($users);
     }
+
     protected function getLangId()
     {
         switch(app()->getLocale())
