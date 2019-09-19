@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
+import Button from '@material-ui/core/Button';
+
+import UserTableForm from './UserTableForm';
+
+
 export default class UserList extends Component {
 
     constructor(props) {
@@ -10,36 +15,38 @@ export default class UserList extends Component {
         this.state = {
             users: [],
             data: [],
+            open_filter: false,
             page_num: 1,
+            per_page: 10,
             loading: true
         }
 
         this.getUsers = this.getUsers.bind(this);
         this.nextPage = this.nextPage.bind(this);
         this.prevPage = this.prevPage.bind(this);
+        this.getDataFromUserForm = this.getDataFromUserForm.bind(this);
+        this.handleFilterClick = this.handleFilterClick.bind(this);
 
     }
-
+ 
     componentDidMount() {
         this.getUsers();
     }
 
-    nextPage() {
-        // if(this.state.page_num + 1 >= this.state.data.last_page) {
-        //     document.querySelector('.btn-next').disabled = true;
-        // }
-        // document.querySelector('.btn-next').disabled = false;
+    getDataFromUserForm(data) {
+        this.setState({ per_page: data }, () => this.getUsers() );
+    }
 
+    handleFilterClick() {
+        this.setState({ open_filter: !this.state.open_filter }, () => console.log(this.state.open_filter));
+    }
+
+    nextPage() {
         this.setState({ page_num: this.state.page_num + 1 }, 
            () => this.getUsers());
     }
 
     prevPage() {
-        // if(this.state.page_num - 1 <= 0) {
-        //     document.querySelector('.btn-prev').disabled = true;
-        // }
-        // document.querySelector('.btn-prev').disabled = false;
-
         this.setState({ page_num: this.state.page_num - 1 }, 
            () => this.getUsers());
     }
@@ -64,11 +71,11 @@ export default class UserList extends Component {
 
         this.setState({ loading: true })
 
-        var url = `/users?page=${this.state.page_num}`;
+        var url = `/users?page=${this.state.page_num}&per_page=${this.state.per_page}`;
 
         axios.get(url)
         .then( res => {
-            console.log(res.data);
+            // console.log(res.data);
             this.setState({ 
                 users: res.data.data,
                 data: res.data,
@@ -85,6 +92,7 @@ export default class UserList extends Component {
                         <div className="card">
                             <div className="card-header">
                                 Users list
+                                <UserTableForm data={this.state.per_page} parentCallback={this.getDataFromUserForm} />
                             </div>
                             <div className="card-body">
                                 {this.state.loading && 

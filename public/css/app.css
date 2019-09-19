@@ -12071,9 +12071,21 @@ h1 {
   color: #fff;
 }
 
+.card table tr:hover {
+  background-color: rgba(29, 182, 29, 0.384);
+}
+
 .card table th,
 .card table td {
   color: #fff;
+}
+
+.card .limit-select {
+  width: 50%;
+}
+
+.card .MuiSlider-colorPrimary {
+  color: #BADA55;
 }
 
 /* Spinner */

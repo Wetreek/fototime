@@ -346,9 +346,22 @@ h1 {
     color: #fff;
 
     table {
+        tr { 
+            &:hover {
+                background-color:  rgba(29, 182, 29, 0.384);
+            }
+        }
         th, td {
             color: #fff;
         }
+    }
+
+    .limit-select {
+        width: 50%;
+    }
+
+    .MuiSlider-colorPrimary {
+        color: #BADA55;
     }
 }
 

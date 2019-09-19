@@ -21,9 +21,10 @@ class IndexController extends Controller
     }
 
     // return users as json
-    public function users()
+    public function users(Request $request)
     {
-        $users = User::paginate(10);
+        $users_per_page = $request->input('per_page');
+        $users = User::paginate($users_per_page);
 
         return response()->json($users);
     }
