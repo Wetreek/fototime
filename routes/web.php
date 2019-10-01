@@ -19,6 +19,7 @@ Route::group(['middleware'=>'language'], function()
     Route::get('/mygallery', 'IndexController@gallery')->name('mygallery');
     Route::get('/competition/{id}', 'IndexController@show');
     Route::get('/users', 'IndexController@users')->name('users');
+    Route::get('/competitionInfo/{id}', 'IndexController@showInfo');
     
     // Auth routes //
     // Login // 

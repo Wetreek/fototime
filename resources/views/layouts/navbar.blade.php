@@ -102,7 +102,7 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
                @foreach ($competitionsSidenav as $item)
                 <div class="collapsible-body">
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li class="s-item"><a href="{{ url('/competition/' . $item->id)}}" class="waves-effect">{{ $item->text_translates->where('lang_id', $lang)->first()->name}}</a></li>
+                <li class="s-item"><a href="{{ url('/competition/{id}' . $item->id)}}" class="waves-effect">{{ $item->text_translates->where('lang_id', $lang)->first()->name}}</a></li>
                 </ul>
                 </div>
                 @endforeach

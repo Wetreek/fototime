@@ -33,6 +33,11 @@ class IndexController extends Controller
      
         return view('competitions.competition', compact('competition'));
     }
+    public function showInfo($id)
+    {
+        $competition = Competition::where('id', $id)->first();
+        return view('competitions.competitionInfo', compact('competition'));
+    }
 
     public function users()
     {

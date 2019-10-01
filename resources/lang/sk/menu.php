@@ -11,5 +11,10 @@ return[
     "about_us" => "O nás",
     "events" => "Podujatia",
     "contact" => "Kontakt",
+    "competition_info" => "Informácie",
+    "competition_propositions" => "Propozície",
+    "competition_rules" => "Pravidlá",
+    "competition_archive" => "Archív",
+    "competition_join" => "Zapojiť sa",
 ];
 ?>
