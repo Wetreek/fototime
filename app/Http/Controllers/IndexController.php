@@ -30,8 +30,10 @@ class IndexController extends Controller
     public function show($id)
     {
         $competition = Competition::where('id', $id)->first();
+        dd($competition);
      
-        return view('competitions.competition', compact('competition'));
+        $lang = $this->getLangId();
+        return view('competitions.competition', compact('competition', 'lang'));
     }
     public function showInfo($id)
     {

@@ -1,6 +1,6 @@
 <nav class="competitionNavbar navbar-expand-sm navbar-dark bg-black ">
         <ul class="nav">
-                @foreach ($competitionsSidenav as $item)
+                @foreach ($competition as $item)
                 <li class="nav-item " id="info">
                         <a href="{{ url('/competitionInfo/{id}' . $item->id) }}" class="nav-link">{{ __('menu.competition_info') }}</a>
                 </li>
