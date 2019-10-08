@@ -2,7 +2,7 @@
         <ul class="nav">
                 @foreach ($competition as $item)
                 <li class="nav-item " id="info">
-                        <a href="{{ url('/competitionInfo/{id}' . $item->id) }}" class="nav-link">{{ __('menu.competition_info') }}</a>
+                        <a href="{{ url('/competition/{id}' . $item->id) }}" class="nav-link">{{ __('menu.competition_info') }}</a>
                 </li>
                 @endforeach
                 <li class="nav-item " id="propositions">
