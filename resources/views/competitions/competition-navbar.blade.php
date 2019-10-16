@@ -1,3 +1,6 @@
+<?php
+$competition = \App\Models\Competition::all();
+?>
 <nav class="competitionNavbar navbar-expand-sm navbar-dark bg-black ">
         <ul class="nav">
                 @foreach ($competition as $item)
