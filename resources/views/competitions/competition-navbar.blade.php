@@ -1,13 +1,8 @@
-<?php
-$competition = \App\Models\Competition::all();
-?>
 <nav class="competitionNavbar navbar-expand-sm navbar-dark bg-black ">
         <ul class="nav">
-                @foreach ($competition as $item)
                 <li class="nav-item " id="info">
-                        <a href="{{ url('/competition/{id}' . $item->id) }}" class="nav-link">{{ __('menu.competition_info') }}</a>
+                                <a href="{{ url('/competitionInfo/' . $competition->competition_id) }}" class="nav-link">{{ __('menu.competition_info') }}</a>
                 </li>
-                @endforeach
                 <li class="nav-item " id="propositions">
                         <a href="{{ url('/') }}" class="nav-link">{{ __('menu.competition_propositions') }}</a>
                 </li>

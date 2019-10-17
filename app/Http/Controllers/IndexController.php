@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Competition;
 use App\Models\TextTranslate;
+use App\Models\Category;
 
 class IndexController extends Controller
 {
@@ -31,12 +32,20 @@ class IndexController extends Controller
     {
         $competition = Competition::where('id', $id)->first();     
         $lang = $this->getLangId();
+        $competition = $competition->text_translates->where('lang_id', $lang)->first();
+        //dd($competition);
         return view('competitions.competition', compact('competition', 'lang'));
     }
     public function showInfo($id)
     {
         $competition = Competition::where('id', $id)->first();
-        return view('competitions.competitionInfo', compact('competition'));
+        //$category = Category::where('competition_id', $id);
+        $lang = $this->getLangId();
+        $competition = $competition->text_translates->where('lang_id', $lang)->first();
+        //$category = $category->text_translates->where('category_id', $lang);
+        //dd($category);
+        //return view('competitions.competitionInfo', compact('competition', 'lang', 'category'));
+        return view('competitions.competitionInfo', compact('competition', 'lang'));
     }
 
     public function users()
