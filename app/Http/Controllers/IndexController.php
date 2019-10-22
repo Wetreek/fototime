@@ -39,13 +39,13 @@ class IndexController extends Controller
     public function showInfo($id)
     {
         $competition = Competition::where('id', $id)->first();
-        //$category = Category::where('competition_id', $id);
+        $category = Category::where('competition_id', $id)->get();
         $lang = $this->getLangId();
         $competition = $competition->text_translates->where('lang_id', $lang)->first();
-        //$category = $category->text_translates->where('category_id', $lang);
+        //$category = $category->text_translates->where('lang_id', $lang);
         //dd($category);
-        //return view('competitions.competitionInfo', compact('competition', 'lang', 'category'));
-        return view('competitions.competitionInfo', compact('competition', 'lang'));
+        return view('competitions.competitionInfo', compact('competition', 'lang', 'category'));
+        //return view('competitions.competitionInfo', compact('competition', 'lang'));
     }
 
     public function users()
