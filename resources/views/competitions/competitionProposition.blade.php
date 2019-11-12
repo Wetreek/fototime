@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-{{--@include( 'competitions.competition')--}}
+<div class="container mt-2">
+    <h1>{{$competition->name }}</h1>
+</div>
+@include( 'competitions.competition-navbar')
 @foreach ($proposition as $item)
     @if ($item->proposition_type_id==config('app.COMPETITION_PROPOSITIONS_MEDIAL_PARTNERS'))
-        <div class="text">POROTA:   {!!$item->proposition_text!!}</div>
+    {{--@if ($item->proposition_type_id==2)--}}
+        <div class="text">Partneri:   {!! $item->proposition_text !!}</div>
     @elseif ($item->proposition_type_id==4)
-        <div class="text">POROTA:   {!!$item->proposition_text!!}</div>
+        <div class="text">POROTA:   {!! $item->proposition_text !!}</div>
     @endif
 
 @endforeach
