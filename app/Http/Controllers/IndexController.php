@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Competition;
 use App\Models\TextTranslate;
 use App\Models\Category;
+use App\Models\CompetitionProposition;
 
 class IndexController extends Controller
 {
@@ -42,10 +43,16 @@ class IndexController extends Controller
         $category = Category::where('competition_id', $id)->get();
         $lang = $this->getLangId();
         $competition = $competition->text_translates->where('lang_id', $lang)->first();
-        //$category = $category->text_translates->where('lang_id', $lang);
-        //dd($category);
         return view('competitions.competitionInfo', compact('competition', 'lang', 'category'));
-        //return view('competitions.competitionInfo', compact('competition', 'lang'));
+    }
+    public function showProposition($id)
+    {
+        $lang = $this->getLangId();
+        $competition = Competition::where('id', $id)->first();
+        $proposition = CompetitionProposition::where('competition_id', $id)->where('lang_id', $lang)->get();
+        
+        $competition = $competition->text_translates->where('lang_id', $lang)->first();
+        return view('competitions.competitionProposition', compact('competition', 'lang', 'proposition'));
     }
 
     public function users()

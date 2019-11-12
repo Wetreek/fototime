@@ -4,7 +4,7 @@
                                 <a href="{{ url('/competitionInfo/' . $competition->competition_id) }}" class="nav-link">{{ __('menu.competition_info') }}</a>
                 </li>
                 <li class="nav-item " id="propositions">
-                        <a href="{{ url('/') }}" class="nav-link">{{ __('menu.competition_propositions') }}</a>
+                        <a href="{{ url('/competitionProposition/' . $competition->competition_id) }}" class="nav-link">{{ __('menu.competition_propositions') }}</a>
                 </li>
                 <li class="nav-item " id="rules">
                         <a href="{{ url('/') }}" class="nav-link">{{ __('menu.competition_rules') }}</a>

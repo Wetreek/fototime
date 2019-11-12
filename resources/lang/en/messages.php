@@ -4,7 +4,7 @@
         "email" => "E-mail*",
         "password" => "Password",
         "confirm_password" => "Confirm password",
-        "new_password" => "Nové heslo",
+        "new_password" => "New password",
         "reset_password" => "Reset password",
         "contact_details" => "Contact details",
         "Fname" => "First name*",

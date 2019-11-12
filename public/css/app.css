@@ -11396,6 +11396,7 @@ body {
 
 h1 {
   color: white !important;
+  text-align: center;
 }
 
 #overlay {
@@ -11710,9 +11711,15 @@ h1 {
 
 .competitionNavbar {
   position: relative;
-  left: 50%;
+  width: 100%;
 }
 .competitionNavbar li {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
+  size: 18px;
+}
+
+.text {
+  font-size: 18px !important;
+  color: #fff;
 }

@@ -20,6 +20,7 @@ Route::group(['middleware'=>'language'], function()
     Route::get('/competition/{id}', 'IndexController@show');
     Route::get('/users', 'IndexController@users')->name('users');
     Route::get('/competitionInfo/{id}', 'IndexController@showInfo');
+    Route::get('/competitionProposition/{id}', 'IndexController@showProposition');
     
     // Auth routes //
     // Login // 

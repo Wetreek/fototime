@@ -30,6 +30,7 @@ body {
 }
 h1 {
     color: rgb(255, 255, 255) !important;
+    text-align: center;
 }
 #overlay {
     position: fixed;
@@ -337,10 +338,17 @@ h1 {
 }
 .competitionNavbar {
     position: relative;
-    left: 50%;
+    width:100%;
+    
+    
     
     li {
         font-family: $font-secondary;
         text-transform: uppercase;
+        size: 18px;
     }
+}
+.text {
+    font-size: 18px !important;
+    color: #fff;
 }

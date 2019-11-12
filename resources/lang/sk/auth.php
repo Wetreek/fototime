@@ -14,7 +14,7 @@ return [
 */
 
 'failed' => 'Zadali ste nesprávne údaje.',
-'dont_exist' => 'Tento účet neexistuje! Prosím zaregistrujte sa',
+'dont_exist' => 'Tento účet neexistuje! Prosím zaregistrujte sa.',
 'locked' => 'Tento účet je zablokovaný! Prosím kontaktujte podporu pre odblokovanie účtu.',
 'throttle' => 'Prílíš veľa pokusov o prihlásenie! Pokus opakujte o :seconds sekúnd.',
 
