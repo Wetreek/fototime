@@ -27,6 +27,12 @@
         "edit" => "Editovať",
         "psw_link" => "Poslať resetovací link",
         "logout" => "Odhlásiť sa",
-        "userNotExist" => "Používateľ neexistuje."
+        "userNotExist" => "Používateľ neexistuje.",
+        "calendar" => "Kalendár",
+        "themes" => "Témy",
+        "organizer" => "Organizátor",
+        "recognized" => "Záštita",
+        "awards" => "Ceny",
+        "open" => "Otvorená",
     ]
     ?>

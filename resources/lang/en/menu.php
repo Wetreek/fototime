@@ -11,11 +11,12 @@ return[
     "about_us" => "About us",
     "events" => "Events",
     "contact" => "Contact",
-    "competition_info" => "Informations",
+    "competition_OSutazi" => "About competition",
     "competition_propositions" => "Propositions",
     "competition_rules" => "Rules",
     "competition_archive" => "Archive",
     "competition_join" => "Join",
+    "archiveCompetitions" => "Archive Competitions",
 
 ];
 ?>

@@ -28,5 +28,11 @@
         "psw_link" => "Send Password Reset Link",
         "logout" => "Logout",
         "userNotExist" => "User does not exist",
+        "calendar" => "Calendar",
+        "themes" => "Themes",
+        "organizer" => "Organizer",
+        "recognized" => "Recognized",
+        "awards" => "Awards",
+        "open" => "Open",
     ]
     ?>

@@ -11699,10 +11699,49 @@ h1 {
   opacity: 1;
 }
 
-.carousel-wrapper {
-  max-width: 600px;
-  max-height: 400px;
-  margin: 0 auto;
+.carousel-wrapper .carousel-inner img {
+  width: 100%;
+  /* Set width to 100% */
+  margin: auto;
+}
+
+.copmInfo span {
+  padding-right: 5%;
+}
+.copmInfo .container {
+  padding: 20px 10px;
+}
+.copmInfo h2 {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.copmInfo .compPadd {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.copmInfo .borderComp {
+  border-style: solid;
+  border-color: white;
+}
+.copmInfo .borderInfo {
+  border-style: solid;
+  border-color: #BADA55;
+  width: auto;
+  height: auto;
+}
+
+.compName .nav-link {
+  color: white;
+}
+.compName .nav-link:hover, .compName .nav-link:active {
+  color: #BADA55;
+}
+.compName a {
+  text-decoration: none !important;
+  color: #BADA55;
 }
 
 .s-item {
@@ -11720,6 +11759,6 @@ h1 {
 }
 
 .text {
-  font-size: 18px !important;
+  font-size: 20px !important;
   color: #fff;
 }

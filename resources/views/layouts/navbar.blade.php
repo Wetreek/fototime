@@ -99,6 +99,7 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
             <li class="collapsible-header waves-effect arrow-r"><a href="#homeSubmenu" data-toggle="collapse" id="competitionToggle"> {{ __('menu.competitions') }}</a>
             <?php 
             ?>
+            
                @foreach ($competitionsSidenav as $item)
                 <div class="collapsible-body">
                 <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -107,6 +108,7 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
                 </div>
                 @endforeach
             </li>
+            <li class="nav-item"> <a class="nav-link" href={{ route('archiveCompetitions')}}>{{ __('menu.archiveCompetitions') }}</a></li>
              @if (auth()->user() && auth()->user()->isAdmin())
             <li class="nav-item"> {{ __('menu.fees') }}</li>
             <li class="nav-item"><a class="nav-link" href="{{ route('users') }}"> {{ __('menu.users') }}</a></li>

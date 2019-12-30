@@ -1,17 +1,11 @@
 <nav class="competitionNavbar navbar-expand-sm navbar-dark bg-black ">
         <ul class="nav">
                 <li class="nav-item " id="info">
-                                <a href="{{ url('/competitionInfo/' . $competition->competition_id) }}" class="nav-link">{{ __('menu.competition_info') }}</a>
+                                <a href="{{ url('/competitionOSutazi/' . $competition->competition_id) }}" class="nav-link">{{ __('menu.competition_OSutazi') }}</a>
                 </li>
-                <li class="nav-item " id="propositions">
-                        <a href="{{ url('/competitionProposition/' . $competition->competition_id) }}" class="nav-link">{{ __('menu.competition_propositions') }}</a>
-                </li>
-                <li class="nav-item " id="rules">
-                        <a href="{{ url('/') }}" class="nav-link">{{ __('menu.competition_rules') }}</a>
-                </li>
-                <li class="nav-item " id="archive">
+                {{--<li class="nav-item " id="archive">
                         <a href="{{ url('/') }}" class="nav-link">{{ __('menu.competition_archive') }}</a>
-                </li>
+                </li>--}}
                 <li class="nav-item " id="join">
                         <a href="{{ url('/') }}" class="nav-link">{{ __('menu.competition_join') }}</a>
                 </li>
