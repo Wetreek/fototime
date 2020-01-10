@@ -251,6 +251,18 @@ h1 {
     border-color: #BADA55;
     color: black;
 }
+.btn-join {
+    padding: 30px 60px;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+.btn-span-padding {
+    padding-top: 50px !important;
+}
+
 .col-form-label {
     color: white;
     font-size: 17px;
@@ -263,7 +275,14 @@ h1 {
         margin: 70px 0;
     }
     h3 {
-        color: white;
+        color: #BADA55;
+    }
+    h2 {
+        color: #BADA55;
+    }
+    p {
+        color: white; 
+        font-size: 17px;
     }
 }
 .my-2 {
@@ -271,8 +290,9 @@ h1 {
 }
 .form-check-label {
     color: white;
-    font-size: 15px;
+    font-size: 17px;
 }
+
 .top-navbar {
     transition: height 0.5s ease-in-out;
     background-color: rgb(0, 0, 0);
@@ -398,4 +418,17 @@ h1 {
 .text {
     font-size: 20px !important;
     color: #fff;
+}
+
+.preview-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.upload-image-preview {
+    width: auto;
+    max-height: 300px;
+    display: none;
 }

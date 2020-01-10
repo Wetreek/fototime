@@ -61,5 +61,33 @@
               </div>
             </span>
       </div>
+      @if (auth()->user())
+      <div class="row text-center">
+      <span class="container btn-span-padding center col-sm-12">
+              
+                <a href="{{ url('/loginCompetition/' . $competition->competition_id)}}"><button type="button" class="btn btn-primary btn-join">
+                    {{ __('menu.competition_join') }}
+                </button></a>
+                <a href="{{ url('detailPhoto') }}"><button type="button" class="btn btn-primary btn-join">Detail fotografie</button></a>
+        </span> 
+         </div>
+      @else 
+      @guest 
+    <div class="row text-center">
+      <span class="container btn-span-padding  col-sm-4">
+        <div class="btn-span-login">
+          <a href="{{ route('login') }}"><button type="button" class="btn btn-primary btn-join" >{{ __('messages.login') }}</button></a>
+        </div>
+      </span>
+      @if (Route::has('register'))
+      <span class="container btn-span-padding col-sm-4">
+          <div>
+              <a href="{{ route('register') }}"><button type="button"class="btn btn-primary btn-join" >{{ __('messages.register') }}</button></a>
+          </div>
+      </span>
+      <div>
+      @endif
+        @endguest
+      @endif
 
 @endsection

@@ -34,5 +34,13 @@
         "recognized" => "Recognized",
         "awards" => "Awards",
         "open" => "Open",
+        "registration_competition" => "Competition registration",
+        "agreement" => "Competition rules agreement",
+        "attachments" => "Attachments:",
+        "ageDeclaration" => "Age declaration",
+        "declaration" => "I honestly declare that my age is at time of closure:",
+        "save" => "Save",
+        "detailPhoto" => "Detail photo",
+
     ]
     ?>

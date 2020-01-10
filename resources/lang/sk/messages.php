@@ -34,5 +34,12 @@
         "recognized" => "Záštita",
         "awards" => "Ceny",
         "open" => "Otvorená",
+        "registration_competition" => "Registrácia do súťaže",
+        "agreement" => "Súhlas s podmienkami súťaže",
+        "attachments" => "Prílohy:",
+        "ageDeclaration" => "Vyhlásenie o veku",
+        "declaration" => "Čestne vyhlasujem, že v čase uzávierky súťaže vekovo spadám do kategórie:",
+        "save" => "Uložiť",
+        "detailPhoto" => "Detail fotografie",
     ]
     ?>

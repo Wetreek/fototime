@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Competition;
+use App\Models\TextTranslate;
 
 class UsersController extends Controller
 {
@@ -32,6 +34,17 @@ class UsersController extends Controller
         //return view('auth.edit', compact(['user']));
         return view('admin.editUser', compact(['user'])); */
     }
+    //public function loginCompetition(Request $request)
+    //{
+       // $id=$request->id;
+        //$user = User::where('id', $id)->first();
+       // $user = auth()->user();
+        //$competition = Competition::where('id', $id)->first();
+       // $competition = $competition->text_translates->where('lang_id', $lang)->first();
+       // return view('competitions.competition-loginCompetition', compact(['user', 'competition']))
+
+   // }
+   
     public function profile()
     {
         $formAction = 'profile';

@@ -23,7 +23,10 @@ Route::group(['middleware'=>'language'], function()
     Route::get('/archiveCompetitions', 'IndexController@archiveCompetitions')->name('archiveCompetitions');
     
  //Route::get('/competitionProposition/{id}', 'IndexController@showProposition');
-    
+    //Login Competition
+    Route::get('/loginCompetition/{id}', 'IndexController@loginCompetition');
+    //Detail Photo
+    Route::get('/detailPhoto', 'IndexController@detailPhoto')->name('detailPhoto');;
     // Auth routes //
     // Login // 
     Route::get('/login', 'Auth\LoginController@index')->name('login');

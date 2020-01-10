@@ -18,6 +18,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -30,4 +32,6 @@
     </div>
     {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v3.3&appId=2330548657227927&autoLogAppEvents=1"></script> --}}
 </body>
+<script src="{{ asset('js\uploadImage.js')}}"></script>
+<script src="{{ asset('js\userAgreement.js')}}"></script>
 </html>
