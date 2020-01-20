@@ -41,6 +41,12 @@
         "declaration" => "I honestly declare that my age is at time of closure:",
         "save" => "Save",
         "detailPhoto" => "Detail photo",
+        "ageCategory" => "Age category",
+        "name" => "Name of photo*",
+        "description" => "Description*",
+        "location" => "Place where the photo was taken",
+        "uploadPhoto" => "Upload Photo",
+        "uploadPhoto2" => "Upload Photo",
 
     ]
     ?>

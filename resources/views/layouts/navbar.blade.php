@@ -12,9 +12,9 @@ $lang = app()->getLocale() == "sk" ? 1 : 2; ?>
             </div>
         {{-- <div class="animated-icon2 sidenav-toggle"><span></span></div> --}}
         <ul class="nav">
-            <li class="nav-item " id="faq">
+            {{--<li class="nav-item " id="faq">
                 <a href="{{ url('/about') }}" class="nav-link">FAQ</a>
-            </li>
+            </li>--}}
             <li class="nav-item">
                 <a href="{{ url('/') }}" class="nav-link">FOTOTIME</a>
             </li>

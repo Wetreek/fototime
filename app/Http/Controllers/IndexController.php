@@ -16,15 +16,23 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        $competitions = Competition::all();
-        //$competition = $competition->text_translates->where('lang_id', $lang)->first();
-        //$competition = Competition::where('id', $id)->first();
-        //$proposition = CompetitionProposition::where('competition_id', $id)->where('lang_id', $lang)->get();
-        //$category = Category::where('competition_id', $id)->get();
+        $competitions = \App\Models\Competition::where('status', 0)->get();
         $lang = $this->getLangId();
-        //return view('welcome', compact('competitions','competition', 'lang', 'category', 'proposition'));
-        return view('welcome', compact('competitions', 'lang'));
+        
+        $propositions = [];
+        $categoryCompetition = [];
+        foreach ($competitions as $competition) {
+            $compId = $competition->id;
+            $propositions[$compId] = CompetitionProposition::where('competition_id', $compId)->where('lang_id', $lang)->get();
+            $categoryCompetition[$compId] = DB::select (DB::raw('SELECT distinct c.id, tt.name from text_translates as tt, categories as c 
+        where c.competition_id=:id 
+        and tt.category_id=c.id 
+        and tt.lang_id=:langId'), array('id'=>$compId, 'langId'=>$lang));
+        }
+        //$category = Category::where('competition_id', $id)->get();
+        
+       // return view('welcome', compact('competitionsInfo', 'lang', 'category', 'proposition'));
+        return view('welcome', compact('competitions', 'propositions', 'categoryCompetition', 'lang'));
     }
     public function gallery()
     {
@@ -35,10 +43,23 @@ class IndexController extends Controller
         return view('myPhotoGallery');
     }
     public function archiveCompetitions()
-    {
-        $competitions = Competition::all();
+    {   $competitions = \App\Models\Competition::where('status', 2)->get();
         $lang = $this->getLangId();
-        return view('archiveCompetitions',compact('competitions', 'lang')); 
+        
+        $propositions = [];
+        $categoryCompetition = [];
+        foreach ($competitions as $competition) {
+            $compId = $competition->id;
+            $propositions[$compId] = CompetitionProposition::where('competition_id', $compId)->where('lang_id', $lang)->get();
+            $categoryCompetition[$compId] = DB::select (DB::raw('SELECT distinct c.id, tt.name from text_translates as tt, categories as c 
+        where c.competition_id=:id 
+        and tt.category_id=c.id 
+        and tt.lang_id=:langId'), array('id'=>$compId, 'langId'=>$lang));
+        }
+        //$category = Category::where('competition_id', $id)->get();
+        
+       // return view('welcome', compact('competitionsInfo', 'lang', 'category', 'proposition'));
+        return view('archiveCompetitions', compact('competitions', 'propositions', 'categoryCompetition', 'lang'));
     }
 
     public function show($id)
@@ -47,9 +68,13 @@ class IndexController extends Controller
         $lang = $this->getLangId();
         $competition = $competition->text_translates->where('lang_id', $lang)->first();
         $category = Category::where('competition_id', $id)->get();
+        $categoryCompetition = DB::select (DB::raw('SELECT distinct c.id, tt.name from text_translates as tt, categories as c 
+        where c.competition_id=:id 
+        and tt.category_id=c.id 
+        and tt.lang_id=:langId'), array('id'=>$id, 'langId'=>$lang));
         $proposition = CompetitionProposition::where('competition_id', $id)->where('lang_id', $lang)->get();
         //dd($competition);
-        return view('competitions.competition', compact('competition', 'lang', 'category', 'proposition'));
+        return view('competitions.competition', compact('competition', 'lang', 'category', 'categoryCompetition', 'proposition'));
     }
     public function showOSutazi($id)
     {
@@ -85,7 +110,8 @@ class IndexController extends Controller
         ->join('age_subcategories', 'age_subcategories.id', '=', 'age_subcategories_categories.age_id')
         ->select('age_subcategories.id', 'text_translates.name')
         ->get();*/
-        $ageSubcategories = DB::select (DB::raw('SELECT distinct age.id, tt.name FROM fototime.categories AS c, fototime.text_translates AS tt, 
+        $ageSubcategories = DB::select (DB::raw('SELECT distinct age.id, tt.name FROM fototime.categories AS c,
+        fototime.text_translates AS tt, 
         fototime.age_subcategories_categories AS ascat, fototime.age_subcategories age
         WHERE c.competition_id=:id 
         and tt.age_subcategory_id=age.id
@@ -95,9 +121,24 @@ class IndexController extends Controller
 
     return view('competitions.competition-loginCompetition', compact( 'lang','ageSubcategories', 'competition'));
    }
-    public function detailPhoto()
+   public function uploadPhoto($id)
+   {
+    $competition = Competition::where('id', $id)->first();
+    $lang = $this->getLangId();
+    $competition = $competition->text_translates->where('lang_id', $lang)->first();
+    $category = Category::where('competition_id', $id)->get();
+            $categoryCompetition = DB::select (DB::raw('SELECT distinct c.id, tt.name from text_translates as tt, categories as c 
+            where c.competition_id=:id 
+            and tt.category_id=c.id 
+            and tt.lang_id=:langId'), array('id'=>$id, 'langId'=>$lang));
+            $proposition = CompetitionProposition::where('competition_id', $id)->where('lang_id', $lang)->get();
+
+    return view('photos.uploadPhoto', compact( 'lang', 'competition', 'category', 'categoryCompetition'));
+   }
+    public function detailPhoto($id)
     {
-        return view('photos.detailPhoto');
+        $photoInfo = Category::where('id', $id)->get()[0];
+        return view('photos.detailPhoto', compact( 'id', 'photoInfo'));
     }
     public function users()
     {

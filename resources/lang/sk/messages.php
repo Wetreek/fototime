@@ -41,5 +41,11 @@
         "declaration" => "Čestne vyhlasujem, že v čase uzávierky súťaže vekovo spadám do kategórie:",
         "save" => "Uložiť",
         "detailPhoto" => "Detail fotografie",
+        "ageCategory" => "Veková kategória",
+        "name" => "Názov*",
+        "description" => "Popis*",
+        "location" => "Miesto zhotovenia fotografie",
+        "uploadPhoto" => "Nahratie fotografii",
+        "uploadPhoto2" => "Nahrať fotografiu",
     ]
     ?>

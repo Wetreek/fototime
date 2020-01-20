@@ -20,7 +20,7 @@ setTimeout(function() {
                 img.addEventListener("load", function(){
                     if(this.width!=requirdWidth || this.height!=requirdHeight){
                         invalidDimensions.style.display="block";
-                        btnPhotoUpload.disabled=true;
+                        //btnPhotoUpload.disabled=true;
                     }
                     else{
                         invalidDimensions.style.display="none";
@@ -42,7 +42,7 @@ setTimeout(function() {
             }
             else{
                 invalidType.style.display="block";
-                btnPhotoUpload.disabled=true;
+            //    btnPhotoUpload.disabled=true;
             }
             
         }

@@ -26,7 +26,11 @@ Route::group(['middleware'=>'language'], function()
     //Login Competition
     Route::get('/loginCompetition/{id}', 'IndexController@loginCompetition');
     //Detail Photo
-    Route::get('/detailPhoto', 'IndexController@detailPhoto')->name('detailPhoto');;
+    Route::get('/detailPhoto/{id}', 'IndexController@detailPhoto')->name('detailPhoto');
+    //Upload Photo
+    Route::get('/uploadPhoto/{id}', 'IndexController@uploadPhoto')->name('uploadPhoto');
+    Route::post('/addPhoto', 'UploadPhotoController@addPhoto');
+    //Route::get('/addPhoto', 'UploadPhotoController@addPhoto');
     // Auth routes //
     // Login // 
     Route::get('/login', 'Auth\LoginController@index')->name('login');
@@ -44,6 +48,7 @@ Route::group(['middleware'=>'language'], function()
     Route::get('/profile', 'UsersController@profile')->name('profile');
     Route::patch('/profile', 'UsersController@update');
     Route::patch('/edit', 'UsersController@update');
+    
 
     // Route::get('/editAdmin', 'UsersController@editAdmin')->name('editAdmin');
     // Route::patch('/editAdmin/{id}', 'UsersController@update');
